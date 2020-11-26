@@ -1,0 +1,12 @@
+version: "2"
+services:
+  projectname:
+    image: "node:latest"
+    environment:
+      - DEBUG=app:*
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "8766:3000"
+    init: true
+    command: bash -c "cd /usr/src/app && npm start"
